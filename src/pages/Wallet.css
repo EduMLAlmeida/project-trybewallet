@@ -1,0 +1,20 @@
+.wallet-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 10px;
+}
+
+.wallet-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 10px;
+}
+
+.wallet-table {
+  margin: 50px 0;
+}
