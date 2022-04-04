@@ -6,6 +6,16 @@ const WALLET_INITIAL_STATE = {
 
 const wallet = (state = WALLET_INITIAL_STATE, action) => {
   switch (action.type) {
+  case 'RECEIVE_CURRENCIES_SUCCESS':
+    return {
+      ...state,
+      currencies: action.currencies,
+    };
+  case 'RECEIVE_CURRENCIES_FAILURE':
+    return {
+      ...state,
+      error: action.error,
+    };
   default:
     return state;
   }

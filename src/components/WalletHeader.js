@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 class WalletHeader extends Component {
   render() {
-    const { user } = this.props;
+    const {
+      user,
+    } = this.props;
     return (
       <header className="wallet-header">
         <span data-testid="email-field">

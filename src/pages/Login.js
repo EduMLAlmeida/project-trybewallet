@@ -16,13 +16,13 @@ class Login extends React.Component {
 
   onButtonClick = () => {
     const {
-      onClick,
+      saveUserState,
       history,
     } = this.props;
     const {
       email,
     } = this.state;
-    onClick(email);
+    saveUserState(email);
     history.push('/carteira');
   }
 
@@ -114,11 +114,11 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  onClick: (value) => dispatch(saveUser(value)),
+  saveUserState: (value) => dispatch(saveUser(value)),
 });
 
 Login.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  saveUserState: PropTypes.func.isRequired,
   history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
