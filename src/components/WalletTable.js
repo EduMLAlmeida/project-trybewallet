@@ -40,7 +40,11 @@ class WalletTable extends Component {
                     <td>{ element.method }</td>
                     <td>{ Number(element.value).toFixed(2) }</td>
                     <td>{ element.exchangeRates[element.currency].name }</td>
-                    <td>{ Number(element.exchangeRates[element.currency].ask).toFixed(2) }</td>
+                    <td>
+                      {
+                        Number(element.exchangeRates[element.currency].ask).toFixed(2)
+                      }
+                    </td>
                     <td>{ Number(valorBRL).toFixed(2) }</td>
                     <td>Real</td>
                     <td>Editar/Excluir</td>
