@@ -2,6 +2,7 @@
 const WALLET_INITIAL_STATE = {
   currencies: [],
   expenses: [],
+  expenseId: 0,
 };
 
 const wallet = (state = WALLET_INITIAL_STATE, action) => {
@@ -14,7 +15,22 @@ const wallet = (state = WALLET_INITIAL_STATE, action) => {
   case 'RECEIVE_CURRENCIES_FAILURE':
     return {
       ...state,
-      error: action.error,
+      currenciesError: action.error,
+    };
+  case 'RECEIVE_EXCHANGE_FAILURE':
+    return {
+      ...state,
+      exchangeError: action.error,
+    };
+  case 'SAVE_EXPENSE':
+    return {
+      ...state,
+      expenses: action.state,
+    };
+  case 'SAVE_EXPENSE_ID':
+    return {
+      ...state,
+      expenseId: action.expenseId,
     };
   default:
     return state;

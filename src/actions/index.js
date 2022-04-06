@@ -21,15 +21,41 @@ export function fetchCurrencies() {
     try {
       const currencies = await getCurrencies();
       const allCurrenciesCodes = Object.keys(currencies);
-      const treatedCurreciesCodes = [];
+      const treatedCurrenciesCodes = [];
       allCurrenciesCodes.forEach((element) => {
         if (element !== 'USDT') {
-          treatedCurreciesCodes.push(element);
+          treatedCurrenciesCodes.push(element);
         }
       });
-      dispatch(receiveCurrenciesSuccess(treatedCurreciesCodes));
+      dispatch(receiveCurrenciesSuccess(treatedCurrenciesCodes));
     } catch (error) {
       dispatch(receiveCurrenciesFailure(error));
     }
   };
 }
+
+export const receiveExchangeFailure = (error) => ({
+  type: 'RECEIVE_EXCHANGE_FAILURE',
+  error,
+});
+
+export function fetchExchange() {
+  return async (dispatch) => {
+    try {
+      const exchange = await getCurrencies();
+      return exchange;
+    } catch (error) {
+      dispatch(receiveExchangeFailure(error));
+    }
+  };
+}
+
+export const saveExpense = (state) => ({
+  type: 'SAVE_EXPENSE',
+  state,
+});
+
+export const saveExpenseId = (expenseId) => ({
+  type: 'SAVE_EXPENSE_ID',
+  expenseId,
+});
