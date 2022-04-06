@@ -9,7 +9,9 @@ class WalletHeader extends Component {
       wallet,
     } = this.props;
     let totalExpenses = 0;
-    const { expenses } = wallet;
+    const {
+      expenses,
+    } = wallet;
     expenses.forEach((element) => {
       const valor = element.value;
       const moeda = element.currency;
@@ -21,10 +23,10 @@ class WalletHeader extends Component {
       <header className="wallet-header">
         <span data-testid="email-field">
           Email:
-          {' '}
-          {user.email}
+          { ' ' }
+          { user.email }
         </span>
-        <span data-testid="total-field">{totalExpenses.toFixed(2)}</span>
+        <span data-testid="total-field">{ totalExpenses.toFixed(2) }</span>
         <span data-testid="header-currency-field">BRL</span>
       </header>
     );
